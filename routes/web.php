@@ -1,15 +1,12 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PortafolioController;
+use App\Http\Controllers\SugerenciasController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-
-Route::get('/',[PortafolioController::class,'datosPortafolio']);
+Route::get('/',[PortafolioController::class, 'datosPortafolio']);
 
 Auth::routes();
 
@@ -27,4 +24,8 @@ Route::put('portafolio/{portafolio}',[PortafolioController::class,'update'])->na
 
 Route::delete('portafolio/{portafolio}',[PortafolioController::class,'destroy'])->name('destroy')->middleware('auth');
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('home', [HomeController::class, 'index'])->name('home');
+
+Route::get('sugerencias', [SugerenciasController::class, 'sendMails'])->name('sugerencias');
+
+Route::post('sugerencias', [SugerenciasController::class, 'sendMailsProcessing'])->name('sugerencias.form');

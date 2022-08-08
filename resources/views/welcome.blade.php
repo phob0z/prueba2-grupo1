@@ -9,7 +9,7 @@
         <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
             <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
         </div>
-        <img class="img-fluid" src="{{ $portafolio->getUrl()}}" alt="..." />
+        <img class="img-fluid mx-auto d-block" src="{{ $portafolio->getUrl()}}" alt="..." />
 
     </div>
 </div>
@@ -42,11 +42,11 @@
                             Vídeo: {{ $portafolio->url }}
                             </p>
 
-                            <br>
+                            {{-- <br>
                             <button class="btn btn-warning" href="#!" data-bs-dismiss="modal">
                                 <i class="fa fa-desktop"></i>
                                 Visualizar
-                            </button>
+                            </button> --}}
                         </div>
                     </div>
                 </div>

@@ -29,34 +29,37 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ms-auto">
-                    {{-- <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded"
-                        href="/">Inicio</a> --}}
                     @if (Request::is('/'))
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded"
                                 href="#portafolio">Portafolio</a>
-    {{--                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded"
-                                href="#about">Acerca de</a> --}}
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded"
-                                href="#contact">Contáctanos</a>
                     @endif
-                    @guest
-                        @if (Route::is('login'))
-                            <li class="nav-item mx-0 mx-lg-1"><a class="btn btn-primary btn-small text-capitalize"
-                                    href="{{ route('register') }}">{{ __('Register') }}</a>
-                        @elseif (Route::is('register'))
-                            <li class="nav-item mx-0 mx-lg-1"><a class="btn btn-primary btn-small text-capitalize"
-                                    href="{{ route('login') }}">{{ __('Login') }}</a>
-                        @elseif (Request::is('password/reset'))
-                            <li class="nav-item mx-0 mx-lg-1"><a class="btn btn-primary btn-small text-capitalize"
-                                    href="{{ route('login') }}">{{ __('Back') }}</a>
+                    <li class="nav-item mx-0 mx-lg-1">
+                        @if (Route::is('sugerencias'))
+                            <a class="nav-link py-3 px-0 px-lg-3 rounded" href="#">Sugerencias</a>
+                        @else
+                            <a class="nav-link py-3 px-0 px-lg-3 rounded"
+                                href="{{ route('sugerencias') }}">Sugerencias</a>
                         @endif
-                    @else
-                        <form action="{{ route('logout') }}" method="POST">
-                            @method('POST')
-                            @csrf
-                            <button type="submit" value="Cerrar" class="btn btn-danger">{{ __('Logout') }}</button>
-                        </form>
-                    @endguest
+
+                        @guest
+                            @if (Route::is('login'))
+                        <li class="nav-item py-2 mx-0 mx-lg-1"><a class="btn btn-primary btn-small text-capitalize"
+                                href="{{ route('register') }}">{{ __('Register') }}</a>
+                        @elseif (Route::is('register'))
+                        <li class="nav-item py-2 mx-0 mx-lg-1"><a class="btn btn-primary btn-small text-capitalize"
+                                href="{{ route('login') }}">{{ __('Login') }}</a>
+                        @elseif (Request::is('password/reset'))
+                        <li class="nav-item py-2 mx-0 mx-lg-1"><a class="btn btn-primary btn-small text-capitalize"
+                                href="{{ route('login') }}">{{ __('Back') }}</a>
+                            @endif
+                        @else
+                        <li class="nav-item py-2 mx-0 mx-lg-1">
+                            <form action="{{ route('logout') }}" method="POST">
+                                @method('POST')
+                                @csrf
+                                <button type="submit" value="Cerrar" class="btn btn-danger">{{ __('Logout') }}</button>
+                            </form>
+                        @endguest
                 </ul>
             </div>
         </div>
@@ -153,63 +156,6 @@
                 </div>
             </div>
         </section> --}}
-        <!-- Contact Section-->
-        <section class="page-section" id="contact">
-            <div class="container">
-                <!-- Contact Section Heading-->
-                <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Contáctanos</h2>
-                <!-- Icon Divider-->
-                <div class="divider-custom">
-                    <div class="divider-custom-line"></div>
-                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                    <div class="divider-custom-line"></div>
-                </div>
-                <!-- Contact Section Form-->
-                <div class="row justify-content-center">
-                    <div class="col-lg-8 col-xl-7">
-                        <form id="contactForm" data-sb-form-api-token="API_TOKEN"
-                            action="https://formsubmit.co/leonel_alfonso@hotmail.com" method="POST">
-                            <div class="form-floating mb-3">
-                                <input class="form-control" name="Nombre" id="name" type="text"
-                                    placeholder="Nombre..." data-sb-validations="required" />
-                                <label for="name">{{__('Name')}}</label>
-                                <div class="invalid-feedback" data-sb-feedback="name:required">El nombre es obligatorio.
-                                </div>
-                            </div>
-                            <div class="form-floating mb-3">
-                                <input class="form-control" name="Correo" id="email" type="email"
-                                    placeholder="nombre@ejemplo.com" data-sb-validations="required,email" />
-                                <label for="email">{{__('Email Address')}}</label>
-                                <div class="invalid-feedback" data-sb-feedback="email:required">El correo es obligatorio.</div>
-                                <div class="invalid-feedback" data-sb-feedback="email:email">El correo no es válido.</div>
-                            </div>
-                            <div class="form-floating mb-3">
-                                <input class="form-control" name="Telefono" id="phone" type="tel"
-                                    placeholder="(099) 999-9999" data-sb-validations="required" />
-                                <label for="phone">{{__('Phone number')}}</label>
-                                <div class="invalid-feedback" data-sb-feedback="phone:required">El número de teléfono es obligatorio.</div>
-                            </div>
-                            <div class="form-floating mb-3">
-                                <textarea class="form-control" name="Mensaje" id="message" type="text"
-                                    placeholder="Escriba su mensaje aquí..." style="height: 10rem" data-sb-validations="required"></textarea>
-                                <label for="message">{{__('Message')}}</label>
-                                <div class="invalid-feedback" data-sb-feedback="message:required">El mensaje es obligatorio.</div>
-                            </div>
-                            <div class="d-none" id="submitSuccessMessage">
-                                <div class="text-center mb-3">
-                                    <div class="fw-bolder">Correo enviado correctamente!</div>
-                                </div>
-                            </div>
-                            <div class="d-none" id="submitErrorMessage">
-                                <div class="text-center text-danger mb-3">Error sending message!</div>
-                            </div>
-                            <button class="btn btn-primary btn-xl disabled" id="submitButton"
-                                type="submit">Send</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </section>
     @endif
     @yield('content')
     <!-- Footer-->
@@ -243,7 +189,7 @@
                 <div class="col-lg-4">
                     <h4 class="text-uppercase mb-4">Acerca de Freelancer</h4>
                     <p class="lead mb-0">
-                        Freelance se puede usar libremente, es una plantilla bajo la licencia MIT, creada por 
+                        Freelance se puede usar libremente, es una plantilla bajo la licencia MIT, creada por
                         <a href="http://startbootstrap.com">Start Bootstrap</a>
                         .
                     </p>

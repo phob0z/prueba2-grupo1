@@ -98,7 +98,7 @@ class PortafolioController extends Controller
                 'url'=> request('video')
             ]);
         }
-        return redirect()->route('show',$portafolio);
+        return redirect()->route('show', $portafolio);
 
 
     }
