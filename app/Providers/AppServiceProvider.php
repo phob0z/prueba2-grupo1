@@ -29,7 +29,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        URL::forceScheme('https');
+        if (env('APP_ENV') != 'local') {
+            URL::forceScheme('https');
+        }
         Storage::extend('dropbox', function ($app, $config) {
             $adapter = new DropboxAdapter(new DropboxClient(
                 $config['authorization_token']
