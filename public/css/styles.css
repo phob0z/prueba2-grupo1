@@ -6134,7 +6134,7 @@ textarea.form-control-lg {
 .carousel-indicators {
   position: absolute;
   right: 0;
-  bottom: 0;
+  bottom: 100px;
   left: 0;
   z-index: 2;
   display: flex;

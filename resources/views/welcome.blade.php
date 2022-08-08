@@ -1,6 +1,6 @@
-@extends('layouts.template')
+@extends('layouts.app')
 
-@section('content')
+@section('content2')
 <!-- Portfolio Grid Items-->
 @forelse ($portafolios as $portafolio)
 
