@@ -9,11 +9,19 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Portafolio Grupo 1 - Twitter</title>
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-    <script src="{{ secure_asset('js/app.js') }}" defer></script>
+    @if (env('APP_ENV') != 'local')
+        <script src="{{ secure_asset('js/app.js') }}" defer></script>
+    @else
+        <script src="{{ asset('js/app.js') }}" defer></script>
+    @endif
     <script src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700" type="text/css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" type="text/css" />
-    <link rel="stylesheet" href="{{ secure_asset('css/styles.css') }}" />
+    @if (env('APP_ENV') != 'local')
+        <link rel="stylesheet" href="{{ secure_asset('css/styles.css') }}" />
+    @else
+        <link rel="stylesheet" href="{{ asset('css/styles.css') }}" />
+    @endif
 </head>
 
 <body id="page-top">
