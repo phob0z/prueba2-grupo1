@@ -72,9 +72,8 @@
                                 </div>
                             </div>
                             <div class="flex items-center justify-end mt-4">
-                                <a class="btn" href="{{ url('auth/twitter') }}"
-                                    style="background: #1E9DEA; padding: 10px; width: 100%; text-align: center; display: block; border-radius:4px; color: #ffffff;">
-                                    Login with Twitter
+                                <a class="btn btn-primary" href="{{ url('auth/twitter') }}">
+                                    {{ __('Login') }} con Twitter
                                 </a>
                             </div>
                         </form>
