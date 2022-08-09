@@ -41,12 +41,6 @@
                             <br>
                             Vídeo: {{ $portafolio->url }}
                             </p>
-
-                            {{-- <br>
-                            <button class="btn btn-warning" href="#!" data-bs-dismiss="modal">
-                                <i class="fa fa-desktop"></i>
-                                Visualizar
-                            </button> --}}
                         </div>
                     </div>
                 </div>

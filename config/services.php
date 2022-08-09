@@ -31,4 +31,11 @@ return [
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
 
+    'twitter' => [
+        //'client_id' => 'KU7S6Dc0CEGh17EZO201HpGDi',
+        'client_id' => 'VUhzazJnMFRiS1I3U3RIcWNxUkE6MTpjaQ',
+        //'client_secret' => 'rUqUEHXuueoSoIeS40TW8U5Xun3VtjztuPb6pLK1ovoGQyDBUJ',
+        'client_secret' => 'mPjOvK-f31y35vfJFF-uVZkxExuno93d8Rbd5VbfUpN9swfAWc',
+        'redirect' => '',
+    ]
 ];
