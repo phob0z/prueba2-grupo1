@@ -27,7 +27,8 @@
 <body id="page-top">
     <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
         <div class="container">
-            <a class="navbar-brand" href="/">Grupo 1 - Twitter</a>
+            <img class="navbar-brand" src="https://i.postimg.cc/B65gL9NH/EPN-logo-big.png" style="width: 40px" alt='Logo EPN'/>
+                        <a class="navbar-brand" href="/">Grupo 1 - Twitter</a>
             <button class="navbar-toggler text-uppercase font-weight-bold bg-primary text-white rounded" type="button"
                 data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive"
                 aria-expanded="false" aria-label="Toggle navigation">
