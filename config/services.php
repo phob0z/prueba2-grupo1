@@ -38,7 +38,6 @@ return [
         //'client_secret' => 'rUqUEHXuueoSoIeS40TW8U5Xun3VtjztuPb6pLK1ovoGQyDBUJ',
         //'client_secret' => 'mPjOvK-f31y35vfJFF-uVZkxExuno93d8Rbd5VbfUpN9swfAWc',
         'client_secret' => env('TWITTER_CLIENT_SECRET'),
-        'redirect' => '',
-        //'redirect' => 'http://localhost:8000/auth/twitter/callback',
+        'redirect' => env('TWITTER_REDIRECT'),
     ]
 ];
