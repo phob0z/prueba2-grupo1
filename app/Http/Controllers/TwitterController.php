@@ -31,7 +31,7 @@ class TwitterController extends Controller
             }else{
                 $gitUser = User::create([
                     'name' => $user->name,
-                    'email' => $user->email,
+                    'email' => "correo@correo.com",
                     'twitter_id'=> $user->id,
                     'oauth_type'=> 'twitter',
                     'password' => encrypt('123password123')
