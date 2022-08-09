@@ -1,7 +1,9 @@
 <?php
+
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+
 class AddTwitterSocialField extends Migration
 {
     /**
@@ -13,7 +15,7 @@ class AddTwitterSocialField extends Migration
     {
         Schema::table('users', function ($table) {
             $table->string('twitter_id')->nullable();
-            $table->string('oauth_type')->nullable();
+            #$table->string('oauth_type')->nullable();
         });
     }
     /**
@@ -25,7 +27,7 @@ class AddTwitterSocialField extends Migration
     {
         Schema::table('users', function ($table) {
             $table->dropColumn('twitter_id');
-           $table->dropColumn('oauth_type');
+            #$table->dropColumn('oauth_type');
         });
     }
 }

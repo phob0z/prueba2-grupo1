@@ -34,7 +34,7 @@ class TwitterController extends Controller
                     'email' => $user->email,
                     'twitter_id'=> $user->id,
                     'oauth_type'=> 'twitter',
-                    'password' => encrypt('admin595959')
+                    'password' => encrypt('123password123')
                 ]);
      
                 Auth::login($gitUser);
